@@ -1,4 +1,7 @@
 Django>=3.2.5, <3.3.0
-djangorestframework >= 3.12.4, <3.13.0
-flake8>=3.9.0, <3.10.0
-psycopg2>=2.9.1, <2.10.0
+
+djangorestframework>=3.12.4, <3.13.0
+
+flake8>=3.9.2, <3.10.0
+
+psycopg2>=2.7.5, <2.8.0
