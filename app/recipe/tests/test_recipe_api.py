@@ -158,19 +158,19 @@ class PrivateRecipeApiTests(TestCase):
     
     def test_partial_update_recipe(self):
         """Test updating a recipe with patch"""
-    recipe = sample_recipe(user=self.user)
-    recipe.tags.add(sample_tag(user=self.user))
-    new_tag = sample_tag(user=self.user, name='Curry')
+        recipe = sample_recipe(user=self.user)
+        recipe.tags.add(sample_tag(user=self.user))
+        new_tag = sample_tag(user=self.user, name='Curry')
 
-    payload = {'title': 'Chicken tikka', 'tags': [new_tag.id]}
-    url = detail_url(recipe.id)
-    self.client.patch(url, payload)
+        payload = {'title': 'Chicken tikka', 'tags': [new_tag.id]}
+        url = detail_url(recipe.id)
+        self.client.patch(url, payload)
 
-    recipe.refresh_from_db()
-    self.assertEqual(recipe.title, payload['title'])
-    tags = recipe.tags.all()
-    self.assertEqual(len(tags), 1)
-    self.assertIn(new_tag, tags)
+        recipe.refresh_from_db()
+        self.assertEqual(recipe.title, payload['title'])
+        tags = recipe.tags.all()
+        self.assertEqual(len(tags), 1)
+        self.assertIn(new_tag, tags)
 
     def test_full_update_recipe(self):
         """Test updating a recipe with put"""
