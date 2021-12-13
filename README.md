@@ -11,7 +11,7 @@ Recipe  app api source code
 
 ## Learning
 * Created a fully-functioning REST-API
-* Setrup project using Docker
+* Setup project using Docker
 * Configure Travis-CI
 * Created endpoints
 * Listing & Filtering
